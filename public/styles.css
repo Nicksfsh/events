@@ -1,0 +1,353 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #352d2d;
+    background-color: #f8f9fa;
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.search-container {
+    width: 95%;
+    margin: 0 auto 20px;
+    text-align: left;
+}
+
+.search-container label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.search-box {
+    display: flex;
+    width: 100%;
+}
+
+.search-box input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    box-sizing: border-box;
+    height: 40px; /* Установим высоту */
+}
+
+.search-box button {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #007bff;
+    border-radius: 0 4px 4px 0;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    height: 40px;
+}
+
+.search-box button:hover {
+    background-color: #0056b3;
+}
+
+.events-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+
+.event-card h2 {
+    font-size: 1.2em;
+    margin: 10px 0 10px 0;
+}
+
+.event-card p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 0 10px;
+}
+
+
+.event-card a {
+    display: block;
+    font-size: 0.9em;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.pagination {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pagination button {
+    margin: 0 5px;
+    font-size: 1em;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .pagination button {
+        padding: 5px 8px;
+        font-size: 0.8em;
+    }
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close-btn, .close-view-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus,
+.close-view-btn:hover,
+.close-view-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+}
+
+label {
+    margin: 10px 0 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+.participants-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.participant-card {
+    overflow-x: scroll;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.participant-card h3 {
+    font-size: 1.2em;
+    margin: 0 0 10px;
+}
+
+.participant-card p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+.error-message {
+    color: #f30b0b;
+}
+
+.event-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 200px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.event-card:hover {
+    transform: scale(1.01);
+}
+
+.event-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.event-card-footer {
+    margin-top: auto;
+}
+
+.event-card-footer a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #fff;
+    margin-top: 5px;
+}
+
+.event-card-footer a.register-btn {
+    background-color: #007bff; /* Your original color */
+}
+
+.event-card-footer a.view-btn {
+    background-color: #007bff; /* Your original color */
+}
+
+.event-card-footer a.view-btn:last-child {
+    background-color: #6c757d; /* Your original color */
+}
+
+.no-events-message {
+    font-size: 1.2em;
+    color: #ff0000;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.filter-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter-panel label {
+    margin-right: 5px;
+}
+
+.filter-panel select,
+.filter-panel input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#date {
+    display: flex;
+    width: 100%;
+}
+
+#date div {
+    width: 100%;
+}
+
+#buttons-filters {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-bottom: 15px;
+}
+
+.participants-statistics {
+    overflow-x: scroll;
+    width: 95%;
+    height: 150px;
+    background: #eee;
+    display: flex;
+    margin: 0 auto 15px;
+
+}
+
+.participants-statistics div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+
+.participants-statistics .item {
+    height: 100%;
+    width: 30px;
+    background: #1486ff;
+    margin: .5em;
+    color: black;
+
+}

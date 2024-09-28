@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Афіша заходів у Чернівцях</h1>
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Пошук за назвою події...">
+        </div>
+        <p id="search-error" class="error-message"></p>
+        <div class="filter-panel">
+            <label for="location">Локація:</label>
+            <select id="location">
+                <option value="">Локація...</option>
+            </select>
+
+            <div id="date">
+                <div>
+                    <label for="start-date">Дата початку:</label>
+                    <input type="date" id="start-date">
+                </div>
+                <div>
+                    <label for="end-date">Дата кінця:</label>
+                    <input type="date" id="end-date">
+                </div>
+            </div>
+            <div id="buttons-filters">
+                <button id="apply-filters">Застосувати</button>
+                <button id="clear-filters">Очистити</button>
+            </div>
+        </div>
+        <div id="events-grid" class="events-grid"></div>
+        <div class="pagination">
+            <button id="first-page"><<</button>
+            <button id="prev-page"><</button>
+            <span id="page-info"></span>
+            <button id="next-page">></button>
+            <button id="last-page">>></button>
+        </div>
+
+    </div>
+
+    <!-- Registration modal -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <form id="register-form">
+                <input type="hidden" id="event-id">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" pattern="[^\d]*" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+
+                <label for="dateOfBirth">Date of Birth</label>
+                <input type="date" id="dateOfBirth" required>
+
+                <p>Where did you hear about this event?</p>
+                <div>
+                    <label><input type="radio" name="source" value="social-media" required> Social media</label>
+                    <label><input type="radio" name="source" value="friends"> Friends</label>
+                    <label><input type="radio" name="source" value="self"> Found myself</label>
+                </div>
+                <button type="submit">Register</button>
+            </form>
+            <div id="register-error" class="error-message"></div>
+        </div>
+    </div>
+
+    <!-- Participants modal -->
+    <div id="view-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-view-btn">&times;</span>
+            <h2>Учасники заходу</h2>
+            <div id="participants-statistics" class="participants-statistics">
+
+            </div>
+            <input type="hidden" id="participant-event-id">
+            <div class="search-container">
+                <input type="text" id="participant-search" placeholder="Search by name...">
+                <p id="participant-search-error" class="error-message"></p>
+                <button id="participant-search-button">Search</button>
+            </div>
+            <div id="participants-grid" class="participants-grid"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</div>
+</body>
+</html>
